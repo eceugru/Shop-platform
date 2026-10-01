@@ -26,9 +26,13 @@ spring:
     enabled: true
     locations: classpath:db/migration
 
+jwt:
+  private-key-path: ${JWT_PRIVATE_KEY_PATH:keys/private.pem}
+  public-key-path: ${JWT_PUBLIC_KEY_PATH:keys/public.pem}
+  access-token-expiry: ${JWT_ACCESS_TOKEN_EXPIRY:15m}
+  issuer: ${JWT_ISSUER:shop-platform-identity}
+  refresh-token-expiry: ${JWT_REFRESH_TOKEN_EXPIRY:7d}
+
+
 server:
   port: 8280
-
-
-
-		
